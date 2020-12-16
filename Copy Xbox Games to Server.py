@@ -18,7 +18,7 @@ pool = ThreadPool(2)  # We only want a max of x connections to our Xbox. 2 is de
 ftp_server_ip = ''  # Global placeholder for the server ip.
 ftp_server_username = ''  # Global placeholder for the server username.
 ftp_server_password = ''  # Global placeholder for the server password.
-
+ftp_server_base_dir = '/F/Games/'  # Global placeholder for which drive and folder the games will be uploaded to.
 
 def upload(item, game_folder):
     try:
@@ -69,7 +69,7 @@ def decompress_game_in_memory():
 
                         if str(file) not in completed_files_dict:
                             archive = py7zr.SevenZipFile(file, mode='r')  # Open the file in read mode.
-                            game_folder = '/F/Games/' + str(file)[:-7] + "/"  # Set the remote dir
+                            game_folder = ftp_server_base_dir + str(file)[:-7] + "/"  # Set the remote dir
                             print("Reading the archive's file list and file data for: ", str(file), "\nPlease wait...")
 
                             if archive:
@@ -95,7 +95,6 @@ def decompress_game_in_memory():
 def show_ftp_settings():
     info_list = []  # List to hold the settings.
     if not os.path.exists("Copy_Games_to_Original_Xbox.ini"):
-        print("File doesn't exist")
         with open("Copy_Games_to_Original_Xbox.ini", "w") as ini_file:
             ini_file.write("192.168.1.80\nxbox\nxbox")  # If the ini file doesn't exist, create it and give it settings.
     with open("Copy_Games_to_Original_Xbox.ini", "r") as ini_file:
@@ -238,10 +237,8 @@ def user_prompt(user_input=''):
         else:
             os._exit(0)
 
-
 def main():
     user_prompt()
-
 
 if __name__ == '__main__':
     main()
