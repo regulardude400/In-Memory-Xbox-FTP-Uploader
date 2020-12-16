@@ -1,8 +1,8 @@
 """This module was created to help you transfer your 7z compressed Xbox games to
 your Xbox without having to worry about disk space. It's main feature is that it
-extracts files in RAM and uploads them to your Xbox. You will need at least 7GB
+extracts files in RAM and uploads them to your Xbox. You will need at least 12GB
 or more of free memory to support any titles that use Dual Layer DVD like
-Ninja Gaiden (~6.2GB) or The Guy Game (~6.5GB)."""
+Ninja Gaiden (~6.2GB) or The Guy Game (~6.5GB).  I personally recommend 16GB RAM total."""
 
 import py7zr  # Module used for 7z extraction.
 import os  # Necessary module to find files in directory.
