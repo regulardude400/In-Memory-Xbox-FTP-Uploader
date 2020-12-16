@@ -1,2 +1,2 @@
 # In-Memory-Xbox-FTP-Uploader
-If you have a big directory of compressed games in the .7z format, and lack HDD space but have more than 7gb of RAM? Yeah probably nobody! But I made it out of boredom. Speeds aren't too fast but it is more of proof of concept for me.
+If you have a big directory of compressed games in the .7z format, and lack HDD space but have more than 12GB of RAM? Yeah probably almost nobody! But I made it out of boredom. Speeds aren't too fast but it is more of proof of concept for me.  You need certain libraries like py7zr installed. Do a pip install py7zr to have it working. You may need to update your python to version 3.8+ for it to install properly.
